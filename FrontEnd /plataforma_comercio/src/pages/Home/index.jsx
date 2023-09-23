@@ -1,18 +1,17 @@
-// import { Outlet } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import LeftMenu from "../../shared/components";
 import TopBar from "../../shared/components/TopBar";
+import { SideBar } from "../../shared/components/SideBar";
+import './styles.css'
 
 function Home() {
   return (
-    <>
-      <LeftMenu />
+    <div>
+      <SideBar />
       <TopBar />
-      <div style={{marginLeft:'250px'}}>
-
-      <Outlet/>
+      <div className="outlet">
+        <Outlet />
       </div>
-    </>
+    </div>
   );
 }
 
