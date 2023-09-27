@@ -6,6 +6,8 @@ import "./styles.css";
 export const SideMenu = () => {
   const toast = useRef(null);
 
+
+ 
   const itemsSideTop = [
     {
       label: "ESTOQUE PRIME",
@@ -14,11 +16,11 @@ export const SideMenu = () => {
   ];
   const itemsSideMenu = [
     {
-      label: "Options",
+      label: "Inicio",
       items: [
         {
-          label: "Update",
-          icon: "pi pi-fw pi-plus",
+          label: "Dashboard",
+          icon: "pi pi-fw pi-home",
           command: () => {
             toast.current.show({
               severity: "success",
@@ -29,8 +31,49 @@ export const SideMenu = () => {
           },
         },
         {
-          label: "Delete",
-          icon: "pi pi-times",
+          label: "Carteira",
+          icon: "pi pi-fw pi-wallet",
+          command: () => {
+            toast.current.show({
+              severity: "success",
+              summary: "Updated",
+              detail: "Data Updated",
+              life: 3000,
+            });
+          },
+        },
+        {
+          label: "Produtos",
+          icon: "pi pi-fw pi-shopping-bag",
+          command: () => {
+            toast.current.show({
+              severity: "warn",
+              summary: "Delete",
+              detail: "Data Deleted",
+              life: 3000,
+            });
+          },
+        },
+        {
+          label: "Vendas",
+          icon: "pi pi-fw pi-shopping-cart",
+          command: () => {
+            // toast.current.show({
+            //   severity: "warn",
+            //   summary: "Delete",
+            //   detail: "Data Deleted",
+            //   life: 3000,
+            // });
+            toast.current.show({
+              severity: "success",
+              summary: "Submission Received",
+              detail: "Thank you, we have received your submission.",
+            });
+          },
+        },
+        {
+          label: "Clientes",
+          icon: "pi pi-fw pi-users",
           command: () => {
             toast.current.show({
               severity: "warn",
@@ -43,16 +86,31 @@ export const SideMenu = () => {
       ],
     },
     {
-      label: "Links",
+      label: "Cadastros",
       items: [
         {
-          label: "React Website",
-          icon: "pi pi-external-link",
-          url: "https://reactjs.org/",
+          label: "Adicionar Produto",
+          icon: "pi pi-fw pi-plus",
+          url: "http://localhost:5173/home/teste",
         },
         {
           label: "Upload",
-          icon: "pi pi-upload",
+          icon: "pi pi-fw pi-upload",
+          command: () => {},
+        },
+      ],
+    },
+    {
+      label: "Loja",
+      items: [
+        {
+          label: "Minha Loja",
+          icon: "pi pi-fw pi-external-link",
+          url: "https://reactjs.org/",
+        },
+        {
+          label: "Logout",
+          icon: "pi pi-fw pi-sign-out",
           command: () => {},
         },
       ],
@@ -64,7 +122,7 @@ export const SideMenu = () => {
       <Menu model={itemsSideTop} className="menu-top" />
       <Toast ref={toast} />
       <Menu model={itemsSideMenu} className="custom-menu" />
-      <Menu model={[]} className="custom-menu-botom" />
+      <Menu model={[{}]} className="custom-menu-botom" />
     </div>
   );
 };
