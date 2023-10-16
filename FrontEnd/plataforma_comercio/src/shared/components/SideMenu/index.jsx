@@ -91,7 +91,7 @@ export const SideMenu = () => {
         {
           label: "Adicionar Produto",
           icon: "pi pi-fw pi-plus",
-          url: "http://localhost:5173/home/teste",
+          url: "http://localhost:5173/home/addProduct",
         },
         {
           label: "Upload",
