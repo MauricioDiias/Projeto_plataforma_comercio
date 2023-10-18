@@ -14,7 +14,7 @@ function AppRoutes() {
           <Route path="teste2" element={<p>TEste 20202020</p>} />
         </Route>
         <Route path="*" element={<>404</>} />
-      </Routes>
+      </Routes>,0
     </>
   );
 }
