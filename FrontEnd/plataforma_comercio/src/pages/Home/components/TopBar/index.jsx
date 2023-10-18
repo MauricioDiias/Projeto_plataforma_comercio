@@ -1,5 +1,8 @@
+import { useContext } from "react";
+import { TopBarContext } from "../../../../shared/contexts/TopBarContext";
+
 function TopBar() {
-  
+  const { titleTopBar } = useContext(TopBarContext);
   return (
     <div
       style={{
@@ -10,11 +13,11 @@ function TopBar() {
         display: "flex",
         alignItems: "center",
         fontFamily: "Helvetica",
-        gap:'50px'
+        gap: "50px",
       }}
     >
       <i className="pi pi-bars"></i>
-      <h3 style={{color:'#495057'}}>Home / Cadastrar Produto</h3>
+      <h3 style={{ color: "#495057" }}>Home / {titleTopBar}</h3>
     </div>
   );
 }

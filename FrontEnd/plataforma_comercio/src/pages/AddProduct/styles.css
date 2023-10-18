@@ -1,0 +1,10 @@
+.p-field {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card{
+    padding: 10px;
+    margin: 30px;
+}

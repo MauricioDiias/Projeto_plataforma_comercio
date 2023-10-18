@@ -5,10 +5,18 @@ import { InputNumber } from "primereact/inputnumber";
 import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
 import { useForm } from "react-hook-form";
+import './styles.css'
+
+import { useContext } from "react";
+import { TopBarContext } from "../../shared/contexts/TopBarContext";
 
 export const AddProduct = () => {
   const { handleSubmit, setValue } = useForm();
   const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const { setTitleTopBar } = useContext(TopBarContext);
+
+  setTitleTopBar("Adicionar Produto");
 
   const onSubmit = (data) => {
     console.log(data);
@@ -24,7 +32,7 @@ export const AddProduct = () => {
   };
 
   return (
-    <Card title="Adicionar Produto">
+    <Card className="card" title="Adicionar Produto">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="p-fluid">
           <div className="p-field">
