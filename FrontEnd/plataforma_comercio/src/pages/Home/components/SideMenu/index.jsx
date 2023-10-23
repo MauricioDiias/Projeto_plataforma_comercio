@@ -6,8 +6,6 @@ import "./styles.css";
 export const SideMenu = () => {
   const toast = useRef(null);
 
-
- 
   const itemsSideTop = [
     {
       label: "ESTOQUE PRIME",
@@ -92,6 +90,11 @@ export const SideMenu = () => {
           label: "Adicionar Produto",
           icon: "pi pi-fw pi-plus",
           url: "http://localhost:5173/home/addProduct",
+        },
+        {
+          label: "Adicionar Categoria",
+          icon: "pi pi-fw pi-plus",
+          url: "http://localhost:5173/home/addCategory",
         },
         {
           label: "Upload",
