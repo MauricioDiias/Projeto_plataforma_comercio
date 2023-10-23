@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import TopBar from "./components/TopBar";
 import { SideBar } from "./components/SideBar";
-import './styles.css'
+import "./styles.css";
 
 function Home() {
   return (

@@ -43,6 +43,7 @@ export const SideMenu = () => {
         {
           label: "Produtos",
           icon: "pi pi-fw pi-shopping-bag",
+          url:'http://localhost:5173/home/products',
           command: () => {
             toast.current.show({
               severity: "warn",
