@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import { AddProduct } from "../pages/AddProduct";
 import { AddCategory } from "../pages/AddCategory";
 import { Products } from "../pages/Products";
+
 function AppRoutes() {
   return (
     <>
@@ -18,7 +19,6 @@ function AppRoutes() {
         </Route>
         <Route path="*" element={<>404</>} />
       </Routes>
-      ,0
     </>
   );
 }

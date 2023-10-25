@@ -3,6 +3,8 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { SideMenu } from "../SideMenu/index";
 import "./styles.css";
+
+
 export const SideBar = () => {
   return (
     <div
@@ -16,6 +18,7 @@ export const SideBar = () => {
       }}
     >
       <SideMenu />
+     
     </div>
   );
 };

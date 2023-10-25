@@ -16,7 +16,7 @@ function TopBar() {
         gap: "50px",
       }}
     >
-      <i className="pi pi-bars"></i>
+      <i className="pi pi-bars" ></i>
       <h3 style={{ color: "#495057" }}>Home / {titleTopBar}</h3>
     </div>
   );
