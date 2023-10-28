@@ -26,13 +26,13 @@ function Login() {
         >
           <div className="p-field">
             <span className="p-input-icon-left">
-              <i className="pi pi-search" />
+              <i className="pi pi-envelope" />
               <InputText placeholder="Email" />
             </span>
           </div>
           <div className="p-field">
             <span className="p-input-icon-left">
-              <i className="pi pi-search" />
+              <i className="pi pi-lock" />
               <InputText type="password" placeholder="Senha" />
             </span>
           </div>
