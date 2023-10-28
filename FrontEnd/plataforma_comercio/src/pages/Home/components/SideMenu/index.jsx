@@ -125,7 +125,6 @@ export const SideMenu = () => {
 
   return (
     <div>
-      <Link to={"/home"} relative="path"></Link>
       <Menu model={itemsSideTop} className="menu-top" />
       <Toast ref={toast} />
       <Menu model={itemsSideMenu} className="custom-menu" />
