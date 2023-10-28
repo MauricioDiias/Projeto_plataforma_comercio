@@ -7,15 +7,13 @@ function Login() {
   return (
     <div
       style={{
-        display: "flex",
-        justifyContent: "center",
-        height:'100vh'
+      
       }}
       className="container"
     >
       <Card
         title={"Login"}
-        style={{ width: "500px", margin: "200px 0 300px 0" }}
+        style={{ width: "500px" }}
       >
         <div
           style={{
