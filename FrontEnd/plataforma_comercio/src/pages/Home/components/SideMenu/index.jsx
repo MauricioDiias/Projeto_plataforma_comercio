@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Menu } from "primereact/menu";
 import { Toast } from "primereact/toast";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 export const SideMenu = () => {
   const toast = useRef(null);
@@ -10,6 +11,7 @@ export const SideMenu = () => {
     {
       label: "ESTOQUE PRIME",
       icon: "custom-icon pi pi-fw pi-box",
+      onclick: () => <Link to={"/home"} relative="path" />,
     },
   ];
   const itemsSideMenu = [
@@ -43,7 +45,7 @@ export const SideMenu = () => {
         {
           label: "Produtos",
           icon: "pi pi-fw pi-shopping-bag",
-          url:'http://localhost:5173/home/products',
+          url: "http://localhost:5173/home/products",
           command: () => {
             toast.current.show({
               severity: "warn",
@@ -123,6 +125,7 @@ export const SideMenu = () => {
 
   return (
     <div>
+      <Link to={"/home"} relative="path"></Link>
       <Menu model={itemsSideTop} className="menu-top" />
       <Toast ref={toast} />
       <Menu model={itemsSideMenu} className="custom-menu" />

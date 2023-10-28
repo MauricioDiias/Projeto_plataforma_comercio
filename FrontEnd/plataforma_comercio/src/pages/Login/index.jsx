@@ -2,6 +2,7 @@ import { Card } from "primereact/card";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import './styles.css'
+import {Link} from 'react-router-dom'
 
 function Login() {
   return (
@@ -35,7 +36,9 @@ function Login() {
               <InputText type="password" placeholder="Senha" />
             </span>
           </div>
+          <Link to={'/home'} relative="path">
           <Button label="Log In" type="submit" />
+          </Link>
         </div>
       </Card>
     </div>
