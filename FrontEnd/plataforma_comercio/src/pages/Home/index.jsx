@@ -5,10 +5,12 @@ import "./styles.css";
 
 function Home() {
   return (
-    <div>
-      <SideBar />
-      <TopBar />
-      <div className="outlet">
+    <div style={{ display: "flex" }}>
+      <div className="sideBar">
+        <SideBar />
+      </div>
+      <div className="outlet" style={{ flex: 1 }}>
+        <TopBar />
         <Outlet />
       </div>
     </div>

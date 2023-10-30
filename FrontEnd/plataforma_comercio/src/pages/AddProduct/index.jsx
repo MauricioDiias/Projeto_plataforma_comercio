@@ -15,8 +15,8 @@ export const AddProduct = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const { setTitleTopBar } = useContext(TopBarContext);
+  setTitleTopBar("Cadastros / Adicionar Produto");
 
-  setTitleTopBar("Adicionar Produto");
 
   const onSubmit = (data) => {
     console.log(data);

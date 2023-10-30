@@ -11,10 +11,10 @@ export const SideBar = () => {
       style={{
         width: "250px",
         height: "100%",
-        position: "fixed",
         backgroundColor: "",
         padding: 0,
         margin: 0,
+        position: "fixed",
       }}
     >
       <SideMenu />

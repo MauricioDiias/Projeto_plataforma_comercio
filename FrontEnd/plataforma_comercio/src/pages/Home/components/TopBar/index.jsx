@@ -6,7 +6,7 @@ function TopBar() {
   return (
     <div
       style={{
-        marginLeft: "250px",
+        // marginLeft: "250px",
         height: "91px",
         border: "1px solid #dee2e6",
         padding: "25px",
@@ -16,8 +16,8 @@ function TopBar() {
         gap: "50px",
       }}
     >
-      <i className="pi pi-bars" ></i>
-      <h3 style={{ color: "#495057" }}>Home / {titleTopBar}</h3>
+      <i className="pi pi-bars"></i>
+      <h3 style={{ color: "#495057" }}>{titleTopBar}</h3>
     </div>
   );
 }

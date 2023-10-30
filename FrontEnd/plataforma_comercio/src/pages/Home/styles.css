@@ -1,4 +1,5 @@
-.outlet{
-    margin-left: 250px;
-    
+.sideBar{
+    background-color: aqua;
+    display: flex;
+    width: 250px;
 }
