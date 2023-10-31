@@ -99,11 +99,7 @@ export const SideMenu = () => {
           icon: "pi pi-fw pi-plus",
           url: "http://localhost:5173/home/addCategory",
         },
-        {
-          label: "Upload",
-          icon: "pi pi-fw pi-upload",
-          command: () => {},
-        },
+        
       ],
     },
     {

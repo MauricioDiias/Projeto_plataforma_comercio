@@ -64,65 +64,103 @@ export const AddCategory = () => {
     );
   };
 
-  const onRowEditComplete = (e) => {
-    let _products = [...categorys];
+  const onRowEditComplete = async (e) => {
+    console.log("e", e);
+    let _categories = [...categorys];
     let { newData, index } = e;
+    _categories[index] = newData;
+    try {
+      await axios.put(
+        `http://localhost:3002/categoria/editar/${newData.id}`,
+        newData
+      );
+      setCategorys(_categories);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    _products[index] = newData;
-
-    setCategorys(_products);
+  const deleteCategory = async (categoryId) => {
+    try {
+      await axios.delete(
+        `http://localhost:3002/categoria/excluir/${categoryId}`
+      );
+      getCategorys();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
-    <div>
-      category
-      <Card title={"Adicionar Categoria"} style={{ margin: "40px" }}>
+    <>
+      <Card
+        className="card"
+        title={"Adicionar Categoria"}
+        style={{ margin: "40px" }}
+      >
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="p-field">
-            <label htmlFor="productName">Nome da Categoria</label>
-            <InputText
-              id="categoryName"
-              value={categoryValue}
-              onChange={(e) => {
-                setCategoryValue(e.target.value);
-                handleChange("nome", e.target.value);
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                }
-              }}
-            />
-          </div>
-          <div className="p-field">
-            <Button label="Adicionar Categoria" type="submit" />
+          <div className="p-fluid">
+            <div className="p-field">
+              <label htmlFor="productName">Nome da Categoria</label>
+              <InputText
+                id="categoryName"
+                value={categoryValue}
+                onChange={(e) => {
+                  setCategoryValue(e.target.value);
+                  handleChange("nome", e.target.value);
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                  }
+                }}
+              />
+            </div>
+            <div className="p-field">
+              <Button label="Adicionar Categoria" type="submit" />
+            </div>
           </div>
         </form>
       </Card>
-      adicionar validação no input adicionar uma atualização ao adicionar
-      categia
-      <div className="card">
-        <div className="card p-fluid">
-          <DataTable
-            value={categorys}
-            editMode="row"
-            dataKey="id"
-            onRowEditComplete={onRowEditComplete}
-            tableStyle={{ minWidth: "50rem" }}
-          >
-            <Column field="id" header="ID" style={{ width: "1%" }}></Column>
-            <Column
-              field="nome"
-              header="Name"
-              editor={(options) => textEditor(options)}
-              style={{ width: "20%" }}
-            ></Column>
-            <Column
-              rowEditor
-              headerStyle={{ width: "10%", minWidth: "8rem" }}
-              bodyStyle={{ textAlign: "center" }}
-            ></Column>
-          </DataTable>
+
+      <Card
+        className="card"
+        title={"Lista de Categorias"}
+        style={{ margin: "40px" }}
+      >
+        <div className="card">
+          <div className="card p-fluid">
+            <DataTable
+              value={categorys}
+              editMode="row"
+              dataKey="id"
+              onRowEditComplete={onRowEditComplete}
+            >
+              <Column field="id" header="ID" style={{ width: "1%" }}></Column>
+              <Column
+                field="nome"
+                header="Nome"
+                editor={(options) => textEditor(options)}
+                style={{ width: "20%" }}
+              ></Column>
+              <Column
+                rowEditor
+                headerStyle={{ width: "10%", minWidth: "8rem" }}
+                bodyStyle={{ textAlign: "center" }}
+              ></Column>
+              <Column
+                body={(rowData) => (
+                  <Button
+                    label="Deletar"
+                    className="p-button-danger"
+                    onClick={() => deleteCategory(rowData.id)}
+                  />
+                )}
+                headerStyle={{ width: "1%", minWidth: "1rem" }}
+                bodyStyle={{ textAlign: "center" }}
+              />
+            </DataTable>
+          </div>
         </div>
-      </div>
-    </div>
+      </Card>
+    </>
   );
 };

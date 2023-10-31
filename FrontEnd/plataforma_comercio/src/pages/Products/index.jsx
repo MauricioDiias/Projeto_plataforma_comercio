@@ -31,7 +31,7 @@ export const Products = () => {
 
   const footer = (
     <>
-      <Button label="Save" icon="pi pi-check" />
+      <Button label="Adicionar" icon="pi pi-check" />
       <Button
         label="Cancel"
         severity="secondary"
