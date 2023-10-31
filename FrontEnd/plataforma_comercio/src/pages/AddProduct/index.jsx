@@ -22,12 +22,13 @@ export const AddProduct = () => {
   setTitleTopBar("Cadastros / Adicionar Produto");
 
   const onSubmit = (data) => {
+    AddProduct(data)
     console.log(data);
   };
 
   const categories = [
-    { label: "Electronics", value: "electronics" },
-    { label: "Clothing", value: "clothing" },
+    { label: "Electronics", value: "5" },
+    { label: "Clothing", value: "5" },
   ];
 
   const handleChange = (field, value) => {
@@ -50,10 +51,9 @@ export const AddProduct = () => {
 
   const AddProduct = async (data) => {
     try {
-      await axios.post("http://localhost:3002/categoria/cadastrar", data);
-      console.log("categoria adicionada com sucesso");
+      await axios.post("http://localhost:3002/produtos/cadastrar", data);
+      console.log("Produto adicionado com sucesso");
       getProdutos();
-      setCategoryValue("");
     } catch (error) {
       console.log(error);
     }
@@ -95,26 +95,32 @@ export const AddProduct = () => {
       />
     );
   };
+
+
+
+  const [productName,setProductName] = useState()
   return (
     <>
       <Card className="card" title="Adicionar Produto">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="p-fluid">
             <div className="p-field">
-              <label htmlFor="productName">Nome do Produto</label>
+              <label htmlFor="nome">Nome do Produto</label>
               <InputText
-                id="productName"
+                id="nome"
+                value={productName}
                 onChange={(e) => {
-                  handleChange("productName", e.target.value);
+                  setProductName(e.target.value)
+                  handleChange("nome", e.target.value);
                 }}
               />
             </div>
             <div className="p-field">
-              <label htmlFor="quantity">Quantidade</label>
+              <label htmlFor="quantidade">Quantidade</label>
               <InputNumber
-                inputId="quantity"
+                inputId="quantidade"
                 onChange={(e) => {
-                  handleChange("quantity", e.value);
+                  handleChange("quantidade", e.value);
                 }}
               />
             </div>
@@ -125,7 +131,7 @@ export const AddProduct = () => {
                 mode="currency"
                 currency="BRL"
                 onChange={(e) => {
-                  handleChange("purchasePrice", e.value);
+                  handleChange("preco_unitario_compra", e.value);
                 }}
               />
             </div>
@@ -137,7 +143,7 @@ export const AddProduct = () => {
                 mode="currency"
                 currency="BRL"
                 onChange={(e) => {
-                  handleChange("sellingPrice", e.value);
+                  handleChange("preco_unitario_venda", e.value);
                 }}
               />
             </div>
@@ -146,7 +152,7 @@ export const AddProduct = () => {
               <InputText
                 id="image"
                 onChange={(e) => {
-                  handleChange("image", e.target.value);
+                  handleChange("imagem", e.target.value);
                 }}
               />
             </div>
@@ -161,7 +167,7 @@ export const AddProduct = () => {
                 value={selectedCategory}
                 onChange={(e) => {
                   setSelectedCategory(e.value);
-                  handleChange("category", e.value);
+                  handleChange("categoria_id", e.value);
                 }}
               />
             </div>
