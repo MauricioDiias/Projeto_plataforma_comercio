@@ -18,6 +18,7 @@ export const AddProduct = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [products, setProducts] = useState([]);
 
+  const [categorys, setCategorys] = useState([]);
   const { setTitleTopBar } = useContext(TopBarContext);
   setTitleTopBar("Cadastros / Adicionar Produto");
 
@@ -26,13 +27,19 @@ export const AddProduct = () => {
     console.log(data);
   };
 
-  const categories = [
-    { label: "Electronics", value: "5" },
-    { label: "Clothing", value: "5" },
-  ];
+
 
   const handleChange = (field, value) => {
     setValue(field, value);
+  };
+  const getCategorys = async () => {
+    try {
+      await axios.get("http://localhost:3002/categorias").then((response) => {
+        setCategorys(response.data);
+      });
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   const getProdutos = async () => {
@@ -47,6 +54,7 @@ export const AddProduct = () => {
 
   useEffect(() => {
     getProdutos();
+    getCategorys()
   }, []);
 
   const AddProduct = async (data) => {
@@ -161,12 +169,13 @@ export const AddProduct = () => {
               <Dropdown
                 id="category"
                 name="category"
-                options={categories}
+                options={categorys.map(option => ({ label: option.nome, value: option.id }))}
                 placeholder="Selecione a Categoria"
-                defaultValue={(e) => e.value}
+                defaultValue={(e) => e.nome}
                 value={selectedCategory}
                 onChange={(e) => {
-                  setSelectedCategory(e.value);
+                  console.log(e)
+                  setSelectedCategory(e.target.value);
                   handleChange("categoria_id", e.value);
                 }}
               />
