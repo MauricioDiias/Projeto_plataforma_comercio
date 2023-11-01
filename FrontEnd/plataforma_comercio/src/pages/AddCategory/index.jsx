@@ -149,7 +149,8 @@ export const AddCategory = () => {
               <Column
                 body={(rowData) => (
                   <Button
-                    label="Deletar"
+                  label="Excluir"
+                  icon="pi pi-trash"
                     className="p-button-danger"
                     onClick={() => deleteCategory(rowData.id)}
                   />

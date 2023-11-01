@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import { AddProduct } from "../pages/AddProduct";
 import { AddCategory } from "../pages/AddCategory";
 import { Products } from "../pages/Products";
+import { Dashboard } from "../pages/Home/dasboard";
+import { Vendas } from "../pages/Home/vendas";
 
 function AppRoutes() {
   return (
@@ -15,6 +17,8 @@ function AppRoutes() {
           <Route path="addProduct" element={<AddProduct />} />
           <Route path="addCategory" element={<AddCategory />} />
           <Route path="products" element={<Products />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="vendas" element={<Vendas />} />
           <Route path="teste2" element={<p>TEste 20202020</p>} />
         </Route>
         <Route path="*" element={<>404</>} />

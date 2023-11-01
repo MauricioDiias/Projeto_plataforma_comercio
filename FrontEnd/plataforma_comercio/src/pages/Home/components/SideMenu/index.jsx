@@ -21,27 +21,20 @@ export const SideMenu = () => {
         {
           label: "Dashboard",
           icon: "pi pi-fw pi-home",
-          command: () => {
-            toast.current.show({
-              severity: "success",
-              summary: "Updated",
-              detail: "Data Updated",
-              life: 3000,
-            });
-          },
+          url: "http://localhost:5173/home/dashboard",
         },
-        {
-          label: "Carteira",
-          icon: "pi pi-fw pi-wallet",
-          command: () => {
-            toast.current.show({
-              severity: "success",
-              summary: "Updated",
-              detail: "Data Updated",
-              life: 3000,
-            });
-          },
-        },
+        // {
+        //   label: "Carteira",
+        //   icon: "pi pi-fw pi-wallet",
+        //   command: () => {
+        //     toast.current.show({
+        //       severity: "success",
+        //       summary: "Updated",
+        //       detail: "Data Updated",
+        //       life: 3000,
+        //     });
+        //   },
+        // },
         {
           label: "Produtos",
           icon: "pi pi-fw pi-shopping-bag",
@@ -58,32 +51,20 @@ export const SideMenu = () => {
         {
           label: "Vendas",
           icon: "pi pi-fw pi-shopping-cart",
-          command: () => {
-            // toast.current.show({
-            //   severity: "warn",
-            //   summary: "Delete",
-            //   detail: "Data Deleted",
-            //   life: 3000,
-            // });
-            toast.current.show({
-              severity: "success",
-              summary: "Submission Received",
-              detail: "Thank you, we have received your submission.",
-            });
-          },
+          url: "http://localhost:5173/home/vendas",
         },
-        {
-          label: "Clientes",
-          icon: "pi pi-fw pi-users",
-          command: () => {
-            toast.current.show({
-              severity: "warn",
-              summary: "Delete",
-              detail: "Data Deleted",
-              life: 3000,
-            });
-          },
-        },
+        // {
+        //   label: "Clientes",
+        //   icon: "pi pi-fw pi-users",
+        //   command: () => {
+        //     toast.current.show({
+        //       severity: "warn",
+        //       summary: "Delete",
+        //       detail: "Data Deleted",
+        //       life: 3000,
+        //     });
+        //   },
+        // },
       ],
     },
     {
@@ -105,15 +86,15 @@ export const SideMenu = () => {
     {
       label: "Loja",
       items: [
-        {
-          label: "Minha Loja",
-          icon: "pi pi-fw pi-external-link",
-          url: "https://reactjs.org/",
-        },
+        // {
+        //   label: "Minha Loja",
+        //   icon: "pi pi-fw pi-external-link",
+        //   url: "https://reactjs.org/",
+        // },
         {
           label: "Logout",
           icon: "pi pi-fw pi-sign-out",
-          command: () => {},
+          url: "http://localhost:5173",
         },
       ],
     },

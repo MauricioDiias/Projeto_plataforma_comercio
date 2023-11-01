@@ -36,7 +36,7 @@ function Login() {
               <InputText type="password" placeholder="Senha" />
             </span>
           </div>
-          <Link to={'/home'} relative="path">
+          <Link to={'/home/dashboard'} relative="path">
           <Button label="Log In" type="submit" />
           </Link>
         </div>
